@@ -18,8 +18,8 @@ const Player = () => {
                 <FontAwesomeIcon className="skip-forward" size="2x" icon={faAngleRight} /> {/* Display faAngleRight icon*/}
             </div>
         </div>
-
     )
 }
 
 export default Player;
+
