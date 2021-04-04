@@ -4,3 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+// Import seperately created scss files to main app.scss file
+@import "./song";
+@import "./player";
