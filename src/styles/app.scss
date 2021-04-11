@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+// Add style to the headings
+h1,
+h2,
+h3 {
+  color: rgb(54, 54, 54);
+}
+
 // Import seperately created scss files to main app.scss file
 @import "./song";
 @import "./player";
