@@ -1,18 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 // Import styles
 import "./styles/app.scss";
 // Add components
 import Player from "./components/Player";
 import Song from "./components/Song";
-// Import Data
 import data from "./data";
 
+
 function App() {
+  // State - songs is a name of state now. setSongs is for modifyling songs. useState executes the data function
+  const [songs, setSongs] = useState(data());
+  const [currentSong, setCurrentSong] = useState(songs[0]); // Takes the first song of the array of objects
   return (
     // Display Song and Player component
     <div className="App">
-      <Song />
-      <Player />
+      <Song currentSong={currentSong} /> {/* currentSong is the state passing by */}
+      <Player currentSong={currentSong} />
     </div>
   );
 }
