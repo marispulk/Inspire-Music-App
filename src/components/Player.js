@@ -4,13 +4,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Import specific item
 import { faPlay, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ currentSong }) => { // Add currentSong access to Player
+const Player = ({ currentSong, isPlaying, setIsPlaying }) => { // Add access to Player
     // Ref - To select specific HTML tag in component, use Ref
     const audioRef = useRef(null); // Null is a starting value
     // Event handlers
+    // If playing, then pause it. If pause, then play it.
     const playSongHandler = () => {
-        console.log(audioRef.current); // Get current element (song audio)
-    }
+       if (isPlaying) {
+           audioRef.current.pause();
+           setIsPlaying(!isPlaying); // Setting the state to opposite what it was.
+       }else {
+           audioRef.current.play();
+           setIsPlaying(!isPlaying); // Setting the state to opposite what it was.
+       }
+    };
     return(
         <div className="player">
             <div className="time-control">
